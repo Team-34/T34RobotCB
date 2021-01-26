@@ -1,0 +1,34 @@
+See file:///D:/dev/T34RobotCB/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramReleaseExecutableFrcUserProgramCpp.
+compiling DriveSubsystem.cpp successful.
+
+compiling AutonomousCommand.cpp successful.
+In file included from D:\dev\T34RobotCB\src\main\cpp\commands\AutonomousCommand.cpp:5:0:
+D:\dev\T34RobotCB\src\main\include/commands/AutonomousCommand.h: In constructor 'AutonomousCommand::AutonomousCommand(DriveSubsystem*)':
+D:\dev\T34RobotCB\src\main\include/commands/AutonomousCommand.h:39:21: warning: 'AutonomousCommand::m_drive_subsystem' will be initialized after [-Wreorder]
+     DriveSubsystem* m_drive_subsystem;
+                     ^~~~~~~~~~~~~~~~~
+D:\dev\T34RobotCB\src\main\include/commands/AutonomousCommand.h:38:10: warning:   'bool AutonomousCommand::m_finished' [-Wreorder]
+     bool m_finished;
+          ^~~~~~~~~~
+D:\dev\T34RobotCB\src\main\cpp\commands\AutonomousCommand.cpp:7:1: warning:   when initialized here [-Wreorder]
+ AutonomousCommand::AutonomousCommand(DriveSubsystem* subsystem)
+ ^~~~~~~~~~~~~~~~~
+
+compiling DriveCommand.cpp successful.
+
+compiling RobotContainer.cpp successful.
+In file included from D:\dev\T34RobotCB\src\main\cpp\RobotContainer.cpp:5:0:
+D:\dev\T34RobotCB\src\main\include/RobotContainer.h: In constructor 'RobotContainer::RobotContainer()':
+D:\dev\T34RobotCB\src\main\include/RobotContainer.h:35:23: warning: 'RobotContainer::m_autonomous_command' will be initialized after [-Wreorder]
+     AutonomousCommand m_autonomous_command;
+                       ^~~~~~~~~~~~~~~~~~~~
+D:\dev\T34RobotCB\src\main\include/RobotContainer.h:33:18: warning:   'DriveCommand RobotContainer::m_drive_command' [-Wreorder]
+     DriveCommand m_drive_command;
+                  ^~~~~~~~~~~~~~~
+D:\dev\T34RobotCB\src\main\cpp\RobotContainer.cpp:7:1: warning:   when initialized here [-Wreorder]
+ RobotContainer::RobotContainer()
+ ^~~~~~~~~~~~~~
+
+compiling Robot.cpp successful.
+
+Finished compileFrcUserProgramReleaseExecutableFrcUserProgramCpp, see full log file:///D:/dev/T34RobotCB/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt.
