@@ -8,7 +8,6 @@
 #include <frc2/command/CommandHelper.h>
 
 #include "subsystems/DriveSubsystem.h"
-#include "utils/T34_XboxController.h"
 
 /**
  * Drive command that uses an Drive subsystem.
@@ -17,8 +16,8 @@
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
-class DriveCommand
-  : public frc2::CommandHelper<frc2::CommandBase, DriveCommand>
+class ShieldWallCommand
+  : public frc2::CommandHelper<frc2::CommandBase, ShieldWallCommand>
 {
 public:
     /**
@@ -26,7 +25,7 @@ public:
      *
      * @param subsystem The subsystem used by this command.
      */
-    explicit DriveCommand(DriveSubsystem* subsystem);
+    explicit ShieldWallCommand(DriveSubsystem* subsystem);
 
     void Initialize() override;
     void Execute() override;
@@ -34,11 +33,8 @@ public:
     bool IsFinished() override;
 
     bool HasRequirement(frc2::Subsystem *requirement) const;
-    wpi::SmallSet<frc2::Subsystem*, 4> GetRequirements() const { return m_requirements; }
 
 private:
+    bool m_finished;
     DriveSubsystem* m_drive_subsystem;
-    wpi::SmallSet<frc2::Subsystem*, 4> m_requirements;
-
-    std::shared_ptr<T34_XboxController> m_driver;
 };

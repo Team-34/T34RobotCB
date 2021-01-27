@@ -3,6 +3,8 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "commands/DriveCommand.h"
+#include "RobotContainer.h"
+#include <frc/smartdashboard/SmartDashboard.h>
 
 DriveCommand::DriveCommand(DriveSubsystem* subsystem)
     : m_drive_subsystem{subsystem} 
@@ -12,12 +14,15 @@ DriveCommand::DriveCommand(DriveSubsystem* subsystem)
 
 void DriveCommand::Initialize()
 {
-
+    m_driver.reset(new T34_XboxController(ID_DRIVE_CONTROLLER));
 }
 
 void DriveCommand::Execute()
 {
-
+    
+    m_drive_subsystem->Drive(m_driver->GetLeftStickXDB(), 
+                    m_driver->GetLeftStickYDB(), 
+                    m_driver->GetTriggersCoercedDB());
 }
 
 void DriveCommand::End(bool interrupted)

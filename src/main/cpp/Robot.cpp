@@ -11,6 +11,7 @@ void Robot::RobotInit()
     m_scheduler = &frc2::CommandScheduler::GetInstance();
     m_scheduler->RegisterSubsystem(&m_container.GetDriveSubsystem());
     m_scheduler->SetDefaultCommand(&m_container.GetDriveSubsystem(), m_container.GetDriveCommand());
+    m_scheduler->AddButton(m_container.GetButtonB().WhenReleased(m_container.GetShieldWallCommand()));
 }
 
 /**
