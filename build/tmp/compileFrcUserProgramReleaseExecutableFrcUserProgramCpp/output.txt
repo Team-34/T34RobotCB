@@ -14,11 +14,17 @@ C:\RobotCode\T34RobotCB\src\main\cpp\commands\AutonomousCommand.cpp:7:1: warning
 
 compiling DriveCommand.cpp successful.
 
-compiling RampLimiter.cpp successful.
-
 compiling DriveSubsystem.cpp successful.
 
+compiling RampLimiter.cpp successful.
+
 compiling T34_XboxController.cpp successful.
+
+compiling RobotContainer.cpp successful.
+
+compiling SwerveModule.cpp successful.
+
+compiling Robot.cpp successful.
 
 compiling ShieldWallCommand.cpp successful.
 In file included from C:\RobotCode\T34RobotCB\src\main\cpp\commands\ShieldWallCommand.cpp:5:0:
@@ -32,22 +38,5 @@ C:\RobotCode\T34RobotCB\src\main\include/commands/ShieldWallCommand.h:38:10: war
 C:\RobotCode\T34RobotCB\src\main\cpp\commands\ShieldWallCommand.cpp:8:1: warning:   when initialized here [-Wreorder]
  ShieldWallCommand::ShieldWallCommand(DriveSubsystem* subsystem)
  ^~~~~~~~~~~~~~~~~
-
-compiling SwerveModule.cpp successful.
-
-compiling RobotContainer.cpp successful.
-In file included from C:\RobotCode\T34RobotCB\src\main\cpp\RobotContainer.cpp:5:0:
-C:\RobotCode\T34RobotCB\src\main\include/RobotContainer.h: In constructor 'RobotContainer::RobotContainer()':
-C:\RobotCode\T34RobotCB\src\main\include/RobotContainer.h:39:23: warning: 'RobotContainer::m_autonomous_command' will be initialized after [-Wreorder]
-     AutonomousCommand m_autonomous_command;
-                       ^~~~~~~~~~~~~~~~~~~~
-C:\RobotCode\T34RobotCB\src\main\include/RobotContainer.h:37:18: warning:   'DriveCommand RobotContainer::m_drive_command' [-Wreorder]
-     DriveCommand m_drive_command;
-                  ^~~~~~~~~~~~~~~
-C:\RobotCode\T34RobotCB\src\main\cpp\RobotContainer.cpp:7:1: warning:   when initialized here [-Wreorder]
- RobotContainer::RobotContainer()
- ^~~~~~~~~~~~~~
-
-compiling Robot.cpp successful.
 
 Finished compileFrcUserProgramReleaseExecutableFrcUserProgramCpp, see full log file:///C:/RobotCode/T34RobotCB/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt.

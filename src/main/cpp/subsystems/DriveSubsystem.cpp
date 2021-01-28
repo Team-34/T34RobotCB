@@ -1,11 +1,7 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
 #include <memory>
-#include "subsystems/SwerveMath.h"
 #include <frc/smartdashboard/SmartDashboard.h>
 
+#include "subsystems/SwerveMath.h"
 #include "subsystems/DriveSubsystem.h"
 
 DriveSubsystem::DriveSubsystem() 
@@ -17,8 +13,6 @@ DriveSubsystem::DriveSubsystem()
     , m_speed(1.0)
 {
     m_gyro = new AHRS(frc::SPI::Port::kMXP);
-  //  PutMode();
-    frc::SmartDashboard::PutBoolean("High Speed", true);
     m_mode = DriveMode::RobotCentric;
 }
 
@@ -36,7 +30,6 @@ void DriveSubsystem::SimulationPeriodic()
 void DriveSubsystem::Drive(double x, double y, double r)
 {
     //Deadband
-
     if (fabs(x) < m_db && fabs(y) < m_db && fabs(r) < m_db)
     {
         m_lf.SetDriveSpeed(0.0);
@@ -89,13 +82,23 @@ void DriveSubsystem::Drive(double x, double y, double r)
     m_la.SetDriveSpeed(la_drive_output * m_speed);
     m_rf.SetDriveSpeed(rf_drive_output * m_speed);
     m_ra.SetDriveSpeed(ra_drive_output * m_speed);
-    frc::SmartDashboard::PutNumber("speed",lf_drive_output);
+}
 
+void DriveSubsystem::ShieldWall()
+{
+    m_lf.SetDriveSpeed(0.0);
+    m_la.SetDriveSpeed(0.0);
+    m_rf.SetDriveSpeed(0.0);
+    m_ra.SetDriveSpeed(0.0);
+
+    m_lf.SetSteerPosition(_315_DEG);
+    m_la.SetSteerPosition(_135_DEG);
+    m_rf.SetSteerPosition(_135_DEG);
+    m_ra.SetSteerPosition(_315_DEG);
 }
 
 void DriveSubsystem::SetSteerPosition(double lf, double rf, double la, double ra)
 {
-
     m_lf.SetSteerPosition(lf);
     m_la.SetSteerPosition(la);
     m_rf.SetSteerPosition(rf);
@@ -108,5 +111,4 @@ void DriveSubsystem::SetDriveSpeed(double speed)
     m_la.SetDriveSpeed(speed);
     m_rf.SetDriveSpeed(speed);
     m_ra.SetDriveSpeed(speed);
-
 }

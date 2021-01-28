@@ -11,6 +11,32 @@ enum class AxisType
     ZAxis
 };
 
+// Enumeration for referencing the button ID's of the controller
+enum XBC_Button 
+{
+    BumperLeft = 5,
+    BumperRight = 6,
+    StickLeft = 9,
+    StickRight = 10,
+    A = 1,
+    B = 2,
+    X = 3,
+    Y = 4,
+    Back = 7,
+    Start = 8
+};
+
+// Enumeration for referencing the axis & trigger ID's of the controller
+enum XBC_Axis 
+{
+    LeftX = 0,
+    RightX = 4,
+    LeftY = 1,
+    RightY = 5,
+    LeftTrigger = 2,
+    RightTrigger = 3
+};
+   
 // Subclass of the frc::XboxController adding extra functionality
 class T34_XboxController : public frc::XboxController
 {
