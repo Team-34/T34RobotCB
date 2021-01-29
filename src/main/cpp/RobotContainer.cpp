@@ -3,8 +3,8 @@
 #include <frc2/command/button/JoystickButton.h>
 
 RobotContainer::RobotContainer() 
-    : m_autonomous_command(&m_drive_subsystem) 
-    , m_drive_command(&m_drive_subsystem)
+    : m_drive_command(&m_drive_subsystem) 
+    , m_autonomous_command(&m_drive_subsystem, 0.3, 0.0, 60.0) 
     , m_drive_ctrl(ID_DRIVE_CONTROLLER)
 {
     // Configure the button bindings

@@ -9,6 +9,7 @@ constexpr double _180_DIV_PI(){ return 180.0 / PI; }
 constexpr double _PI_DIV_180(){ return PI / 180.0; }
 
 constexpr double FULL_UNITS{ 36864.0 };
+constexpr double FULL_ROTATION{ 12.566370614359172953850573533118 };
 
 constexpr double FRAME_LENGTH{ 29.0 };
 constexpr double FRAME_WIDTH{ 29.0 };

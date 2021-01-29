@@ -43,7 +43,7 @@ void Robot::DisabledPeriodic()
  */
 void Robot::AutonomousInit() 
 {
-    m_autonomous_command = m_container.GetAutonomousCommand();
+    m_autonomous_command.reset(new DriveToDistanceCMD(m_container.GetDriveSubsystem(), 0.3, 0.0, 60.0));// = m_container.GetAutonomousCommand();
 
     if (m_autonomous_command != nullptr) 
     {

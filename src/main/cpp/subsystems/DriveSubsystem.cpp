@@ -112,3 +112,8 @@ void DriveSubsystem::SetDriveSpeed(double speed)
     m_rf.SetDriveSpeed(speed);
     m_ra.SetDriveSpeed(speed);
 }
+
+double DriveSubsystem::GetDrivePosition()
+{
+    return m_lf.GetDrivePosition();
+}

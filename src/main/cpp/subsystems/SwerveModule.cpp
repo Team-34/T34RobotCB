@@ -77,3 +77,14 @@ void SwerveModule::SetSteerPosition(const double & position, double offset)
     
     m_steer->Set(ControlMode::Position, current_position + delta);
 }
+
+void SwerveModule::ZeroDrivePosition()
+{
+    m_drive->GetSensorCollection().SetIntegratedSensorPosition(0.0);
+}
+
+double SwerveModule::GetDrivePosition()
+{
+   return m_drive->GetSensorCollection().GetIntegratedSensorPosition();
+
+}

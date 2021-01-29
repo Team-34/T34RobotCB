@@ -14,6 +14,9 @@ public:
     void SetDriveSpeed(const double & speed);
     void SetSteerPosition(const double & posistion, double offset = 0.0);
 
+    void ZeroDrivePosition();
+    double GetDrivePosition();
+
     double m_default_invert;
     double m_invert;
 

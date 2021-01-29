@@ -1,42 +1,4 @@
 See file:///C:/RobotCode/T34RobotCB/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramReleaseExecutableFrcUserProgramCpp.
-compiling AutonomousCommand.cpp successful.
-In file included from C:\RobotCode\T34RobotCB\src\main\cpp\commands\AutonomousCommand.cpp:5:0:
-C:\RobotCode\T34RobotCB\src\main\include/commands/AutonomousCommand.h: In constructor 'AutonomousCommand::AutonomousCommand(DriveSubsystem*)':
-C:\RobotCode\T34RobotCB\src\main\include/commands/AutonomousCommand.h:39:21: warning: 'AutonomousCommand::m_drive_subsystem' will be initialized after [-Wreorder]
-     DriveSubsystem* m_drive_subsystem;
-                     ^~~~~~~~~~~~~~~~~
-C:\RobotCode\T34RobotCB\src\main\include/commands/AutonomousCommand.h:38:10: warning:   'bool AutonomousCommand::m_finished' [-Wreorder]
-     bool m_finished;
-          ^~~~~~~~~~
-C:\RobotCode\T34RobotCB\src\main\cpp\commands\AutonomousCommand.cpp:7:1: warning:   when initialized here [-Wreorder]
- AutonomousCommand::AutonomousCommand(DriveSubsystem* subsystem)
- ^~~~~~~~~~~~~~~~~
-
-compiling DriveCommand.cpp successful.
-
-compiling DriveSubsystem.cpp successful.
-
-compiling RampLimiter.cpp successful.
-
-compiling T34_XboxController.cpp successful.
-
-compiling RobotContainer.cpp successful.
-
-compiling SwerveModule.cpp successful.
-
 compiling Robot.cpp successful.
-
-compiling ShieldWallCommand.cpp successful.
-In file included from C:\RobotCode\T34RobotCB\src\main\cpp\commands\ShieldWallCommand.cpp:5:0:
-C:\RobotCode\T34RobotCB\src\main\include/commands/ShieldWallCommand.h: In constructor 'ShieldWallCommand::ShieldWallCommand(DriveSubsystem*)':
-C:\RobotCode\T34RobotCB\src\main\include/commands/ShieldWallCommand.h:39:21: warning: 'ShieldWallCommand::m_drive_subsystem' will be initialized after [-Wreorder]
-     DriveSubsystem* m_drive_subsystem;
-                     ^~~~~~~~~~~~~~~~~
-C:\RobotCode\T34RobotCB\src\main\include/commands/ShieldWallCommand.h:38:10: warning:   'bool ShieldWallCommand::m_finished' [-Wreorder]
-     bool m_finished;
-          ^~~~~~~~~~
-C:\RobotCode\T34RobotCB\src\main\cpp\commands\ShieldWallCommand.cpp:8:1: warning:   when initialized here [-Wreorder]
- ShieldWallCommand::ShieldWallCommand(DriveSubsystem* subsystem)
- ^~~~~~~~~~~~~~~~~
 
 Finished compileFrcUserProgramReleaseExecutableFrcUserProgramCpp, see full log file:///C:/RobotCode/T34RobotCB/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt.

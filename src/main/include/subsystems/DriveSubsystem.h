@@ -33,6 +33,8 @@ public:
     void ShieldWall();
     void SetSteerPosition(double lf, double rf, double la, double ra);
     void SetDriveSpeed(double speed);
+    inline void ZeroDrivePosition() { m_lf.ZeroDrivePosition(); }
+    double GetDrivePosition();
 
 private:
     AHRS * m_gyro;
