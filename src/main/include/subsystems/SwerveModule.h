@@ -17,6 +17,8 @@ public:
     void ZeroDrivePosition();
     double GetDrivePosition();
 
+    inline WPI_TalonFX* GetDriveMotor() { return m_drive;}
+
     double m_default_invert;
     double m_invert;
 

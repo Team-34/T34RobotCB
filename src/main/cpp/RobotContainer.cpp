@@ -42,6 +42,31 @@ void RobotContainer::ConfigureButtonBindings()
                 [this]
                 { 
                     m_drive_subsystem.ShieldWall();
+                } ,
+                std::initializer_list< frc2::Subsystem * >{ &m_drive_subsystem }
+            }            
+        );
+    
+    // Bind Driver Controller A Button Released Event to Toggle Mode
+    frc2::JoystickButton(&m_drive_ctrl, XBC_Button::A)
+        .WhenReleased(
+            frc2::InstantCommand
+            {
+                [this]
+                { 
+                    m_drive_subsystem.ToggleMode();
+                } 
+            }            
+        );
+    
+     // Bind Driver Controller Back Button Released Event to ZeroYaw
+    frc2::JoystickButton(&m_drive_ctrl, XBC_Button::Back)
+        .WhenReleased(
+            frc2::InstantCommand
+            {
+                [this]
+                { 
+                    m_drive_subsystem.ZeroYaw();
                 } 
             }            
         );

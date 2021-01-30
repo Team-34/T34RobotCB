@@ -35,7 +35,13 @@ public:
     void SetDriveSpeed(double speed);
     inline void ZeroDrivePosition() { m_lf.ZeroDrivePosition(); }
     double GetDrivePosition();
-
+    void ToggleMode();
+    void PutMode();
+    void SetFollowMode(bool follow);
+    void SetDriveTarget(double target);
+    void SetDrivePID(double p, double i, double d);
+    void ZeroYaw();
+    
 private:
     AHRS * m_gyro;
     DriveMode m_mode;

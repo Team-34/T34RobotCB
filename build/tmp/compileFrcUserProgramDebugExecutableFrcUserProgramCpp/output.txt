@@ -1,4 +1,29 @@
 See file:///C:/RobotCode/T34RobotCB/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
-compiling Robot.cpp successful.
+compiling DriveToDistance.cpp successful.
+In file included from C:\RobotCode\T34RobotCB\src\main\cpp\commands\DriveToDistance.cpp:6:0:
+C:\RobotCode\T34RobotCB\src\main\include/commands/DriveToDistance.h: In constructor 'DriveToDistanceCMD::DriveToDistanceCMD(DriveSubsystem*, double, double, double)':
+C:\RobotCode\T34RobotCB\src\main\include/commands/DriveToDistance.h:39:21: warning: 'DriveToDistanceCMD::m_drive_subsystem' will be initialized after [-Wreorder]
+     DriveSubsystem* m_drive_subsystem;
+                     ^~~~~~~~~~~~~~~~~
+C:\RobotCode\T34RobotCB\src\main\include/commands/DriveToDistance.h:38:10: warning:   'bool DriveToDistanceCMD::m_finished' [-Wreorder]
+     bool m_finished;
+          ^~~~~~~~~~
+C:\RobotCode\T34RobotCB\src\main\cpp\commands\DriveToDistance.cpp:10:1: warning:   when initialized here [-Wreorder]
+ DriveToDistanceCMD::DriveToDistanceCMD(DriveSubsystem* subsystem, double speed, double angle, double distance)
+ ^~~~~~~~~~~~~~~~~~
+In file included from C:\RobotCode\T34RobotCB\src\main\cpp\commands\DriveToDistance.cpp:6:0:
+C:\RobotCode\T34RobotCB\src\main\include/commands/DriveToDistance.h:43:12: warning: 'DriveToDistanceCMD::m_distance' will be initialized after [-Wreorder]
+     double m_distance;
+            ^~~~~~~~~~
+C:\RobotCode\T34RobotCB\src\main\include/commands/DriveToDistance.h:40:12: warning:   'double DriveToDistanceCMD::m_encoder_position' [-Wreorder]
+     double m_encoder_position;
+            ^~~~~~~~~~~~~~~~~~
+C:\RobotCode\T34RobotCB\src\main\cpp\commands\DriveToDistance.cpp:10:1: warning:   when initialized here [-Wreorder]
+ DriveToDistanceCMD::DriveToDistanceCMD(DriveSubsystem* subsystem, double speed, double angle, double distance)
+ ^~~~~~~~~~~~~~~~~~
+C:\RobotCode\T34RobotCB\src\main\cpp\commands\DriveToDistance.cpp: In member function 'virtual void DriveToDistanceCMD::Execute()':
+C:\RobotCode\T34RobotCB\src\main\cpp\commands\DriveToDistance.cpp:43:28: warning: comparisons like 'X<=Y<=Z' do not have their mathematical meaning [-Wparentheses]
+     if (m_distance + 800.0 < position > m_distance - 800.0)
+         ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
 
 Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/RobotCode/T34RobotCB/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.

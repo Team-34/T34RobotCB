@@ -14,6 +14,7 @@ DriveSubsystem::DriveSubsystem()
 {
     m_gyro = new AHRS(frc::SPI::Port::kMXP);
     m_mode = DriveMode::RobotCentric;
+    PutMode();
 }
 
 
@@ -116,4 +117,67 @@ void DriveSubsystem::SetDriveSpeed(double speed)
 double DriveSubsystem::GetDrivePosition()
 {
     return m_lf.GetDrivePosition();
+}
+
+void DriveSubsystem::ToggleMode()
+{
+    if (m_mode == DriveMode::RobotCentric)
+        m_mode = DriveMode::FieldOriented;
+    else
+        m_mode = DriveMode::RobotCentric;
+    
+    PutMode();
+    
+}
+
+void DriveSubsystem::PutMode()
+{
+    if (m_mode == DriveMode::RobotCentric)
+        frc::SmartDashboard::PutNumber("SwerveMode", 0);
+    else
+        frc::SmartDashboard::PutNumber("SwerveMode", 1);
+
+    
+}
+
+void DriveSubsystem::SetFollowMode(bool follow)
+{
+    WPI_TalonFX* lf = m_lf.GetDriveMotor();
+    if (follow)
+    {
+        m_ra.GetDriveMotor()->Follow(*lf);
+        m_rf.GetDriveMotor()->Follow(*lf);
+        m_la.GetDriveMotor()->Follow(*lf);
+    }
+    else
+    {
+        m_lf.GetDriveMotor()->Set(ControlMode::PercentOutput, 0.0);
+        m_ra.GetDriveMotor()->Set(ControlMode::PercentOutput, 0.0);
+        m_rf.GetDriveMotor()->Set(ControlMode::PercentOutput, 0.0);
+        m_la.GetDriveMotor()->Set(ControlMode::PercentOutput, 0.0);
+    }
+    
+}
+
+void DriveSubsystem::SetDriveTarget(double target)
+{
+    SetFollowMode(true);
+    m_lf.GetDriveMotor()->Set(ControlMode::Position, target);
+}
+
+void DriveSubsystem::SetDrivePID(double p, double i, double d)
+{
+    WPI_TalonFX* lf = m_lf.GetDriveMotor();
+    lf->Config_kP(0, p, 0);
+    lf->Config_kI(0, i, 0);
+    lf->Config_kD(0, d, 0);
+
+    frc::SmartDashboard::PutNumber("p" , p);
+    frc::SmartDashboard::PutNumber("i" , i);
+    frc::SmartDashboard::PutNumber("d" , d);
+}
+
+void DriveSubsystem::ZeroYaw()
+{
+    m_gyro->ZeroYaw();
 }

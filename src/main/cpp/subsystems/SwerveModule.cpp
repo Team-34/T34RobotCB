@@ -16,9 +16,19 @@ SwerveModule::SwerveModule(std::string name, const int drive_id, const int steer
     m_steer->SetInverted(false);
     m_steer->Config_kD(0, 0.05, 0);
 
+    
+    m_drive->ConfigSelectedFeedbackSensor(FeedbackDevice::IntegratedSensor, 0, 0);
+    m_drive->ConfigIntegratedSensorAbsoluteRange(AbsoluteSensorRange::Signed_PlusMinus180);
     m_drive->SetNeutralMode(NeutralMode::Brake);
     m_drive_brake_on = true;
+    // P:.0043 I:.000000003 D:.04
     
+    TalonFXConfiguration allConfigs;
+    m_drive->GetAllConfigs(allConfigs);
+    allConfigs.peakOutputForward = 0.5;
+    allConfigs.peakOutputReverse = -0.5;
+    m_drive->ConfigAllSettings(allConfigs);
+   
     m_default_invert = m_invert = invert;
 }
 
